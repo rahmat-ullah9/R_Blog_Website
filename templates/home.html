@@ -26,14 +26,9 @@
 
     <div class="nav-scroller py-1 mb-3 border-top border-bottom">
         <nav class="nav d-flex justify-content-between">
-            <a class="p-2 nav-link" href="#">Technology</a>
-            <a class="p-2 nav-link" href="#">Design</a>
-            <a class="p-2 nav-link" href="#">Culture</a>
-            <a class="p-2 nav-link" href="#">Business</a>
-            <a class="p-2 nav-link" href="#">Politics</a>
-            <a class="p-2 nav-link" href="#">Science</a>
-            <a class="p-2 nav-link" href="#">Health</a>
-            <a class="p-2 nav-link" href="#">Travel</a>
+            {% for cat in categories %}
+            <a class="p-2 nav-link" href="#">{{ cat.category_name }}</a>
+            {% endfor %}
         </nav>
     </div>
 
