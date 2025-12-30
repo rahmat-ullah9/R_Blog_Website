@@ -6,16 +6,18 @@ class Category(models.Model):
     category_name = models.CharField(max_length=50, unique=True)
     created_category = models.DateTimeField(auto_now_add=True)
     updated_category = models.DateTimeField(auto_now=True)
-     
+   
     # Admin panel e Category er jaygay Categories Dekhanor jonno
     class Meta:
         verbose_name_plural ='Categories'
-
+    #admin panel e blog post korar shomoy category name dekhanor jonno 
+    def __str__(self):
+        return self.category_name
 
 STATUS_CHOICE = (
 
     ('draft','Draft'),
-    ('public','published')
+    ('published','published')
 
 )
 class Blogs(models.Model):
@@ -26,7 +28,7 @@ class Blogs(models.Model):
     blog_image = models.ImageField(upload_to='uploads/%Y/%m/%d')
     short_description = models.TextField(max_length=1000)
     blog_body = models.TextField(max_length=3000)
-    status = models.CharField(max_length=10, choices=STATUS_CHOICE, default='draft')
+    status = models.CharField(max_length=100, choices=STATUS_CHOICE, default='draft')
     is_featured = models.BooleanField(default=False)
     
     created_category = models.DateTimeField(auto_now_add=True)
