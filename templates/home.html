@@ -26,9 +26,12 @@
 
     <div class="nav-scroller py-1 mb-3 border-top border-bottom">
         <nav class="nav d-flex justify-content-between">
+            
             {% for cat in categories %}
             <a class="p-2 nav-link" href="#">{{ cat.category_name }}</a>
             {% endfor %}
+
+            
         </nav>
     </div>
 
